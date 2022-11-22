@@ -1,0 +1,42 @@
+Principles of Optics Max Born and Emil Wolf 7th edition.
+
+We use the formulas of reflection and transmission : our thickness range is $[30, 90]$ nanomètres. At normal incidence, supposing that $exp(2v_2\eta)\geq 50$ which correspond to $h\geq 25 \; nm$ the following simplification involve an error of $2\%$ :
+
+\begin{equation}
+  \mathcal{R} \simeq \rho_{12}^2 \quad \mathcal{T} = \frac{n_3cos(\theta_3)}{n_1cos(\theta_1)}\tau_{12}^2\tau_{23}^2e^{-4v_2\eta}
+\end{equation}
+
+with 
+\begin{align*}
+  2u_2^2 &= \left[n_2^2(1-\kappa_2^2)-n_1^2sin^2(\theta_1)\right] + \sqrt{\left[n_2^2(1-\kappa_2^2)-n_1^2sin^2(\theta_1)\right]^2 + 4n_2^4\kappa_2^2}\\
+  2v_2^2 &= -\left[n_2^2(1-\kappa_2^2)-n_1^2sin^2(\theta_1)\right] + \sqrt{\left[n_2^2(1-\kappa_2^2)-n_1^2sin^2(\theta_1)\right]^2 + 4n_2^4\kappa_2^2}
+\end{align*}
+
+and 
+\begin{align*}
+  \eta &= \frac{2\pi}{\lambda_0}h\\
+  \rho_{12}^2 &= \frac{(n_1cos(\theta_1) - u_2)^2+v^2}{(n_1cos(\theta_1) + u_2)^2+v^2}\\
+  \tau_{12}^2 &= \frac{(2n_1cos(\theta_1))^2}{(n_1cos(\theta_1) + u_2)^2+v^2}\\
+  \tau_{23}^2 &= \frac{4(u_2^2+v_2^2)}{(n_3cos(\theta_3) + u_2)^2+v^2}
+\end{align*}
+
+The formulas (1) depends only of refractive index, angles, wavelength, extinction coefficient and thickness. Wavelength and extinction coefficient are bound to each other so we must take that into account. In our case, we work at normal incidence so we will suppose $\theta_1=\theta_3=0$, the top dielectric environmet is composed of air, and the bottom one is composed of glass, so we will suppose $n_1=1, \; n_3=1,52$. We will think about the substract material later. Indeed, we would like to use quartz, but, since it is a birefringent material this complicate things. This leads to
+
+\begin{equation*}
+  u_2 = n_2 \quad v_2 = n_2 \kappa_2
+\end{equation*}
+
+\begin{align*}
+  \rho_{12}^2 &= \frac{(1-n_2)^2 + n_2^2\kappa_2^2}{(1+n_2)^2 + n_2^2\kappa_2^2}\\
+  \tau_{12}^2 &= \frac{4}{(1+n_2)^2 + n_2^2\kappa_2^2}\\
+  \tau_{23}^2 &= \frac{4(n_2^2+n_2^2\kappa_2^2)}{(1+n_2)^2 + n_2^2\kappa_2^2}
+\end{align*}
+
+d'où
+
+\begin{align}
+  \mathcal{R} &\simeq \frac{(1-n_2)^2 + n_2^2\kappa_2^2}{(1+n_2)^2 + n_2^2\kappa_2^2}\\
+  \mathcal{T} &= 1,5\times\frac{16\;n_2^2(1+\kappa_2^2)}{\left[(1,5+n_2^2)^2 + n_2^2\kappa_2^2\right]^2}e^{-8\pi n_2^2 \kappa_2^2 \frac{h}{\lambda}}
+\end{align}
+
+Considering the evolution of the refractive index and of the extinction coefficient of silver, the numerical evaluation can be given in an array-shape :
